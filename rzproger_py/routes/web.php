@@ -15,6 +15,9 @@ Route::get('/feedback', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/contact/all/{id}', 'ContactController@detailMessage')->name('contact-detail-one');
+
+
 Route::get('/contact/all', 'ContactController@allData')->name('contact-data');
 
 

@@ -31,10 +31,15 @@ class ContactController extends Controller{
         //return view('messages', ['data'=> $contact->inRandomOrder()->get()]);
         //return view('messages', ['data'=> [$contact->inRandomOrder()->first()]]);
         //return view('messages', ['data'=>[$contact->find(2)]]);
-       return view('messages', ['data'=>Contact::all ()]);
+       return view('messages', ['data'=>$contact->all()]);
 //        $contact = new Contact;
 //        dd($contact->all());
 
+    }
+
+    public function detailMessage($id){
+        $contact = new Contact();
+        return view('detail-message',['data'=>$contact->find($id)]);
     }
 
 
