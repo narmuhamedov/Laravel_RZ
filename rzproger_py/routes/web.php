@@ -15,7 +15,19 @@ Route::get('/feedback', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/contact/all/{id}', 'ContactController@detailMessage')->name('contact-detail-one');
+Route::get('/contact/all/{id}', 'ContactController@detailMessage'
+)->name('contact-detail-one');
+
+Route::post('/contact/all/{id}/update', 'ContactController@updateMessageSubmit'
+)->name('contact-update-submit');
+
+
+Route::get('/contact/all/{id}/update', 'ContactController@updateMessage'
+)->name('contact-update');
+
+
+Route::get('/contact/all/{id}/delete', 'ContactController@deleteMessage'
+)->name('contact-delete');
 
 
 Route::get('/contact/all', 'ContactController@allData')->name('contact-data');
